@@ -1,6 +1,7 @@
 import java.net.Socket;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.SSLParameters;
 import java.io.*;
 
 /** Establish a SSL connection to a host and port, writes a byte and
@@ -36,6 +37,11 @@ public class SSLPoke {
                 // tls direct connect
                 sslsocket = (SSLSocket) sslsocketfactory.createSocket(args[0], Integer.parseInt(args[1]));
             }
+
+            // add full verification currently just https style
+            SSLParameters sslparams = new SSLParameters();
+            sslparams.setEndpointIdentificationAlgorithm("HTTPS");
+            sslsocket.setSSLParameters(sslparams);
 
             InputStream in = sslsocket.getInputStream();
             OutputStream out = sslsocket.getOutputStream();
