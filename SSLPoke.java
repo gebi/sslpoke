@@ -1,3 +1,6 @@
+/* Author: Michael Gebetsroither <michael@mgeb.org>
+ * License: Apache 2
+ */
 import java.net.Socket;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
