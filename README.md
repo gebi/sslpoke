@@ -1,6 +1,6 @@
 # sslpoke
 
-Tool to test SSL connections from within the java VM (including HTTP proxy support)
+Tool to test SSL connections from within the java VM, including HTTP proxy support, on java application servers.
 
 I got the initial version of this tool from: https://confluence.atlassian.com/download/attachments/117455/SSLPoke.java
 
@@ -8,6 +8,12 @@ Fixed it up, added features and use it mostly to test/debug/validate certificate
 
 If you need any features feel free to add them and send pull requests.
 
+## Build
+
+```
+% make
+javac SSLPoke.java
+```
 
 ## Usage
 
@@ -30,7 +36,7 @@ Usage with special trustStore file set:
 Successfully connected
 ```
 
-## Errors from OPS
+## Errors seen from sslpoke
 
 Usual failure in corporate environments where you forgot to use the proxy
 (in which case just abort the tool with ctrl+c if you don't want to wait)
