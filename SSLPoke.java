@@ -56,6 +56,7 @@ public class SSLPoke {
 
         } catch (Exception exception) {
             exception.printStackTrace();
+            System.exit(1);
         }
     }
 
