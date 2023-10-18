@@ -67,8 +67,10 @@ public class SSLPoke {
     throws IOException
     {
         OutputStream out = tunnel.getOutputStream();
+        String javaVersion = "Java/" + System.getProperty("java.version");
+        String userAgent = System.getProperty("http.agent") == null ? javaVersion : System.getProperty("http.agent") + " " + javaVersion;
         String msg = "CONNECT " + host + ":" + port + " HTTP/1.1\n"
-                     + "User-Agent: " + sun.net.www.protocol.http.HttpURLConnection.userAgent + "\r\n"
+                     + "User-Agent: " + userAgent + "\r\n"
                      + "\r\n";
         byte b[];
         try {
